@@ -5,10 +5,11 @@ import './home.css'
 const Home = ({ link, setLink }) => {
   return (
     <div className="home">
+      <div className="container">
       <h1>Audio Player</h1>
       <div className="uploadInput">
       <form>
-      <label for="URL">Enter Audio URL : </label>
+      
         <input
           type="file"
           id="URL"
@@ -39,6 +40,7 @@ const Home = ({ link, setLink }) => {
         
         <strong >Upload</strong>
         </div>   </Link>
+        </div>
     </div>
   );
 };

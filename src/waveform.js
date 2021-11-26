@@ -2,7 +2,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import WaveSurfer from "wavesurfer.js";
-
+import './waveform.css'
 export default class Waveform extends React.Component {
   constructor(props) {
     super(props);
@@ -50,7 +50,7 @@ export default class Waveform extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="wave">
         <div ref={this.waveformRef} />
       </div>
     );

@@ -52,7 +52,7 @@ function Audio({ link }) {
 
 
   return (
-      <div>
+      <div className="audio">
           <audio src={link} controls={true} />
       </div>
   )

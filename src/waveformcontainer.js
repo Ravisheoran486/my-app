@@ -1,6 +1,6 @@
 import React from "react";
 import Waveform from "./waveform";
-
+import './waveformcontainer.css'
 class WaveformContainer extends React.Component {
   constructor(props) {
     super(props);
@@ -64,7 +64,7 @@ class WaveformContainer extends React.Component {
     );
 
     return (
-      <div>
+      <div className="control">
         {waveforms}
         <button onClick={this.togglePlay}>play/pause</button>
         <button onClick={this.resetPlayhead}>reset playhead</button>
