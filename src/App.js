@@ -1,23 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import { useState, useEffect, useRef } from "react";
+import "./App.css";
+import Audio from "./audio";
+import Home from "./home";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import WaveformContainer from "./waveformcontainer";
 
 function App() {
+  const [link, setLink] = useState("");
+  useEffect(() => {
+    console.log("link", link);
+  }, [link]);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Routes>
+        <Route
+          path="/"
+          exact
+          element={<Home link={link} setLink={setLink} />}
+        />
+        <Route path="/audio" element={<WaveformContainer link={link} />} />
+      </Routes>
     </div>
   );
 }
